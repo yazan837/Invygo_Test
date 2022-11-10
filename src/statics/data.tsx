@@ -1,4 +1,14 @@
-export const data = [
+export type dataType = {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  gender: string;
+  age: number;
+  localities: string;
+  Professionals: string;
+};
+export const data: dataType[] = [
   {
     id: 1,
     first_name: "Fayina",
