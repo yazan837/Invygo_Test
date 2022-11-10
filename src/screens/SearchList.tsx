@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 import { data, dataType } from "../statics/data";
 
 const Search = () => {
-  const [searchPhrase, setSearchPhrase] = useState("");
+  const [searchPhrase, setSearchPhrase] = useState<string>("");
   const [clicked, setClicked] = useState<boolean>(false);
   const [fakeData, setFakeData] = useState<dataType[]>();
   useEffect(() => setFakeData(data), []);

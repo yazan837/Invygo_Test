@@ -32,14 +32,15 @@ const professionRadio = [
 ];
 
 const Registration = ({}) => {
-  const [guestCountValue, setguestCountValue] = useState(0);
-  const [professionValue, setprofessionValue] = useState(0);
-  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  const [dateString, setDateString] = useState("Enter DOB");
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [locality, setLocality] = useState("");
-  const [address, setAddress] = useState("");
+  const [guestCountValue, setguestCountValue] = useState<number>(0);
+  const [professionValue, setprofessionValue] = useState<number>(0);
+  const [isDatePickerVisible, setDatePickerVisibility] =
+    useState<boolean>(false);
+  const [dateString, setDateString] = useState<string>("Enter DOB");
+  const [name, setName] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [locality, setLocality] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
 
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -122,12 +123,14 @@ const Registration = ({}) => {
               {isDatePickerVisible && (
                 <View
                   style={{
-                    backgroundColor: "#FFFFFF",
+                    backgroundColor: "grey",
+                    position: "absolute",
+                    padding: 6,
                   }}
                 >
                   <CalendarPicker
                     todayBackgroundColor="transparent"
-                    selectedDayColor="black"
+                    selectedDayColor="red"
                     selectedDayTextColor="#ffffff"
                     onDateChange={(date) => {
                       setDatePickerVisibility(false);
@@ -181,37 +184,36 @@ const Registration = ({}) => {
               value={locality}
             />
           </View>
-          <View>
-            <View style={styles.radioViewContainer}>
-              <Text>Guest </Text>
-              <RadioForm formHorizontal={true} animation={true}>
-                {guestCountRadio.map((obj, i) => (
-                  <RadioButton labelHorizontal={true} key={i}>
-                    <RadioButtonInput
-                      obj={obj}
-                      index={i}
-                      isSelected={guestCountValue === i}
-                      onPress={setguestCountValue}
-                      buttonInnerColor={"black"}
-                      buttonOuterColor={"black"}
-                      buttonWrapStyle={{ marginLeft: 12 }}
-                    />
-                    <RadioButtonLabel
-                      obj={obj}
-                      index={i}
-                      labelHorizontal={true}
-                      onPress={setguestCountValue}
-                      labelStyle={{
-                        fontSize: 17,
-                        color: "black",
-                      }}
-                    />
-                  </RadioButton>
-                ))}
-              </RadioForm>
-            </View>
+
+          <View style={styles.radioViewContainer}>
+            <Text>Guest </Text>
+            <RadioForm formHorizontal={true} animation={true}>
+              {guestCountRadio.map((obj, i) => (
+                <RadioButton labelHorizontal={true} key={i}>
+                  <RadioButtonInput
+                    obj={obj}
+                    index={i}
+                    isSelected={guestCountValue === i}
+                    onPress={setguestCountValue}
+                    buttonInnerColor={"black"}
+                    buttonOuterColor={"black"}
+                    buttonWrapStyle={{ marginLeft: 12 }}
+                  />
+                  <RadioButtonLabel
+                    obj={obj}
+                    index={i}
+                    labelHorizontal={true}
+                    onPress={setguestCountValue}
+                    labelStyle={{
+                      fontSize: 17,
+                      color: "black",
+                    }}
+                  />
+                </RadioButton>
+              ))}
+            </RadioForm>
           </View>
-          <View style={styles.viewDataContainer}>
+          <View style={[styles.viewDataContainer, { height: 150 }]}>
             <TextInput
               placeholder="Address"
               placeholderTextColor={"black"}
@@ -274,10 +276,10 @@ const styles = StyleSheet.create({
   },
   radioViewContainer: {
     flexDirection: "row",
-    height: 60,
+    height: 50,
     alignItems: "center",
     marginLeft: width * 0.02,
-    marginTop: 6,
+    marginTop: 10,
   },
   buttonTouchable: {
     height: 55,

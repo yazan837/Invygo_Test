@@ -6,25 +6,40 @@ import Registration from "../screens/Registration";
 import Search from "../screens/SearchList";
 import Report from "../screens/Report";
 import Details from "../screens/Details";
+
 type NavigationType = {
   Registration: { name: string };
-  SearchList: undefined;
+  Search: undefined;
   Report: undefined;
+  Details: { name: string };
 };
-const RootStack = createStackNavigator();
-
+const RootStack = createStackNavigator<NavigationType>();
+const Drawer = createDrawerNavigator<NavigationType>();
 export default function RootNavigation() {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
-        <RootStack.Screen name={"Search Screen"} component={Search} />
-        <RootStack.Screen name={"Details Screen"} component={Details} />
-        <RootStack.Screen
-          name={"Registration Screen"}
-          component={Registration}
-        />
-        <RootStack.Screen name={"Report Screen"} component={Report} />
-      </RootStack.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Registration" component={Registration} />
+        <Drawer.Screen name="Search" component={SearchStack} />
+        <Drawer.Screen name="Report" component={Report} />
+      </Drawer.Navigator>
     </NavigationContainer>
+  );
+}
+
+function SearchStack() {
+  return (
+    <RootStack.Navigator>
+      <RootStack.Screen
+        name="Search"
+        component={Search}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="Details"
+        component={Details}
+        options={{ headerShown: true }}
+      />
+    </RootStack.Navigator>
   );
 }

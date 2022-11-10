@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { data } from "../statics/data";
+import { data, dataType } from "../statics/data";
 
 const Report = () => {
-  const [reportData, setReportData] = useState<any>([]);
-  const [age13_18, setAge13_18] = useState(0);
-  const [age19_25, setAge19_25] = useState(0);
-  const [age25_, setAge25] = useState(0);
-  const [student, setStudent] = useState("");
+  const [reportData, setReportData] = useState<dataType[]>([]);
+  const [age13_18, setAge13_18] = useState<number>(0);
+  const [age19_25, setAge19_25] = useState<number>(0);
+  const [age25_, setAge25] = useState<number>(0);
+  const [student, setStudent] = useState<string>("");
 
-  const [profession, setProfession] = useState("");
+  const [profession, setProfession] = useState<string>("");
   useEffect(() => {
     calculateReportData();
   }, [reportData]);
@@ -17,27 +17,21 @@ const Report = () => {
     setReportData(data);
   }, []);
   const calculateReportData = () => {
-    reportData?.map(
-      (element: {
-        Professionals: string;
-        age: number;
-        professionId: number;
-      }) => {
-        console.log("element", element);
-        if (element.age <= 18 || element.age >= 13) {
-          setAge13_18(age13_18 + 1);
-        } else if (element.age <= 25 || element.age >= 19) {
-          setAge19_25(age19_25 + 1);
-        } else {
-          setAge25(age25_ + 1);
-        }
-        if (element.Professionals != "") {
-          setProfession(profession + 1);
-        } else {
-          setStudent(student + 1);
-        }
+    reportData?.map((element: any) => {
+      console.log("element", element);
+      if (element.age <= 18 || element.age >= 13) {
+        setAge13_18(age13_18 + 1);
+      } else if (element.age <= 25 || element.age >= 19) {
+        setAge19_25(age19_25 + 1);
+      } else {
+        setAge25(age25_ + 1);
       }
-    );
+      if (element.Professionals != "") {
+        setProfession(profession + 1);
+      } else {
+        setStudent(student + 1);
+      }
+    });
 
     console.log(age13_18, age19_25, age25_, student, profession);
     setAge13_18(age13_18);
