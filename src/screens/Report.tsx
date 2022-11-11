@@ -7,6 +7,7 @@ const Report = () => {
   const [age13_18, setAge13_18] = useState<number>(0);
   const [age19_25, setAge19_25] = useState<number>(0);
   const [age25_, setAge25] = useState<number>(0);
+  const [guestNumber, setGuestNumber] = useState<number>(0);
   const [student, setStudent] = useState<string | number>("");
   const [localites, setLocalites] = useState<{ [key: string]: any }>({});
 
@@ -24,6 +25,7 @@ const Report = () => {
     let st = 0;
     let pr = 0;
     let count = {};
+    let GuestCount = 0;
     reportData?.map((element: any) => {
       if (element.age <= 18 && element.age >= 13) {
         a = a + 1;
@@ -37,13 +39,16 @@ const Report = () => {
       } else {
         st = st + 1;
       }
+      if (element.guest) {
+        GuestCount = GuestCount + 1;
+      }
       if (element.localities in count) {
         count[element.localities] = count[element.localities] + 1;
       } else {
         count[element.localities] = 1;
       }
+      setGuestNumber(GuestCount);
       setLocalites(count);
-      console.log("count: ", localites);
     });
 
     setAge13_18(a);
@@ -69,17 +74,28 @@ const Report = () => {
       <View style={styles.titleContainer1}>
         <Text style={styles.title}>Number of people by localities</Text>
       </View>
-      <ScrollView style={{ height: "25%" }}>
-        {Object.entries(localites).map(([key, value]) => {
+      <ScrollView
+        style={{ height: "25%" }}
+        showsVerticalScrollIndicator={false}
+      >
+        {Object.entries(localites).map(([key, value], i) => {
           return (
-            <View style={[styles.titleContainer, { borderWidth: 1 }]}>
+            <View key={i} style={[styles.titleContainer, { borderWidth: 1 }]}>
               <Text>{key}</Text>
               <Text>{value}</Text>
             </View>
           );
         })}
       </ScrollView>
-
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>
+          Average group size of people attending the event
+        </Text>
+      </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.dataView}>Guests : </Text>
+        <Text style={styles.dataText}>{guestNumber}</Text>
+      </View>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Average Professionals & students count</Text>
       </View>

@@ -12,6 +12,7 @@ type NavigationType = {
   Search: undefined;
   Report: undefined;
   Details: { name: string };
+  SearchStack: undefined;
 };
 const RootStack = createStackNavigator<NavigationType>();
 const Drawer = createDrawerNavigator<NavigationType>();
@@ -20,7 +21,7 @@ export default function RootNavigation() {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Registration" component={Registration} />
-        <Drawer.Screen name="Search" component={SearchStack} />
+        <Drawer.Screen name="SearchStack" component={SearchStack} />
         <Drawer.Screen name="Report" component={Report} />
       </Drawer.Navigator>
     </NavigationContainer>

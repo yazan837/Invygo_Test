@@ -7,6 +7,7 @@ export type dataType = {
   age: number;
   localities: string;
   Professionals: string;
+  guest: boolean;
 };
 export const data: dataType[] = [
   {
@@ -18,6 +19,7 @@ export const data: dataType[] = [
     age: 2,
     localities: "Monaco",
     Professionals: "Nuclear Power Engineer",
+    guest: true,
   },
   {
     id: 2,
@@ -28,6 +30,7 @@ export const data: dataType[] = [
     age: 31,
     localities: "Vietnam",
     Professionals: "Information Systems Manager",
+    guest: true,
   },
   {
     id: 3,
@@ -38,6 +41,7 @@ export const data: dataType[] = [
     age: 14,
     localities: "Russia",
     Professionals: "Teacher",
+    guest: true,
   },
   {
     id: 4,
@@ -48,6 +52,7 @@ export const data: dataType[] = [
     age: 9,
     localities: "China",
     Professionals: "Assistant Manager",
+    guest: true,
   },
   {
     id: 5,
@@ -58,6 +63,7 @@ export const data: dataType[] = [
     age: 28,
     localities: "Cameroon",
     Professionals: "Help Desk Technician",
+    guest: true,
   },
   {
     id: 6,
@@ -68,6 +74,7 @@ export const data: dataType[] = [
     age: 13,
     localities: "Indonesia",
     Professionals: "Quality Engineer",
+    guest: true,
   },
   {
     id: 7,
@@ -78,6 +85,7 @@ export const data: dataType[] = [
     age: 8,
     localities: "Afghanistan",
     Professionals: "Web Designer I",
+    guest: true,
   },
   {
     id: 8,
@@ -88,6 +96,7 @@ export const data: dataType[] = [
     age: 17,
     localities: "Netherlands",
     Professionals: "Data Coordiator",
+    guest: true,
   },
   {
     id: 9,
@@ -98,6 +107,7 @@ export const data: dataType[] = [
     age: 39,
     localities: "Croatia",
     Professionals: "Occupational Therapist",
+    guest: true,
   },
   {
     id: 10,
@@ -108,6 +118,7 @@ export const data: dataType[] = [
     age: 39,
     localities: "Uganda",
     Professionals: "Paralegal",
+    guest: true,
   },
   {
     id: 11,
@@ -118,6 +129,7 @@ export const data: dataType[] = [
     age: 1,
     localities: "Indonesia",
     Professionals: "Assistant Manager",
+    guest: true,
   },
   {
     id: 12,
@@ -128,6 +140,7 @@ export const data: dataType[] = [
     age: 13,
     localities: "Poland",
     Professionals: "Research Associate",
+    guest: true,
   },
   {
     id: 13,
@@ -138,6 +151,7 @@ export const data: dataType[] = [
     age: 23,
     localities: "Portugal",
     Professionals: "Information Systems Manager",
+    guest: true,
   },
   {
     id: 14,
@@ -148,6 +162,7 @@ export const data: dataType[] = [
     age: 1,
     localities: "China",
     Professionals: "Nuclear Power Engineer",
+    guest: true,
   },
   {
     id: 15,
@@ -158,6 +173,7 @@ export const data: dataType[] = [
     age: 6,
     localities: "Indonesia",
     Professionals: "Pharmacist",
+    guest: true,
   },
   {
     id: 16,
@@ -168,6 +184,7 @@ export const data: dataType[] = [
     age: 21,
     localities: "China",
     Professionals: "Help Desk Operator",
+    guest: true,
   },
   {
     id: 17,
@@ -178,6 +195,7 @@ export const data: dataType[] = [
     age: 34,
     localities: "Russia",
     Professionals: "Account Executive",
+    guest: true,
   },
   {
     id: 18,
@@ -188,6 +206,7 @@ export const data: dataType[] = [
     age: 15,
     localities: "Peru",
     Professionals: "Nurse Practicioner",
+    guest: true,
   },
   {
     id: 19,
@@ -198,6 +217,7 @@ export const data: dataType[] = [
     age: 7,
     localities: "Thailand",
     Professionals: "General Manager",
+    guest: true,
   },
   {
     id: 20,
@@ -208,7 +228,9 @@ export const data: dataType[] = [
     age: 14,
     localities: "Philippines",
     Professionals: "Compensation Analyst",
+    guest: true,
   },
+
   {
     id: 21,
     first_name: "Mickey",
@@ -218,6 +240,7 @@ export const data: dataType[] = [
     age: 3,
     localities: "Chile",
     Professionals: "Registered Nurse",
+    guest: true,
   },
   {
     id: 22,
@@ -228,6 +251,7 @@ export const data: dataType[] = [
     age: 31,
     localities: "Bahrain",
     Professionals: "Budget/Accounting Analyst I",
+    guest: true,
   },
   {
     id: 23,
@@ -238,6 +262,7 @@ export const data: dataType[] = [
     age: 36,
     localities: "China",
     Professionals: "Senior Developer",
+    guest: true,
   },
   {
     id: 24,
@@ -248,6 +273,7 @@ export const data: dataType[] = [
     age: 22,
     localities: "Thailand",
     Professionals: "Geological Engineer",
+    guest: true,
   },
   {
     id: 25,
@@ -258,6 +284,7 @@ export const data: dataType[] = [
     age: 24,
     localities: "Argentina",
     Professionals: "Business Systems Development Analyst",
+    guest: true,
   },
   {
     id: 26,
@@ -268,6 +295,7 @@ export const data: dataType[] = [
     age: 7,
     localities: "Indonesia",
     Professionals: "Statistician I",
+    guest: true,
   },
   {
     id: 27,
@@ -278,6 +306,7 @@ export const data: dataType[] = [
     age: 32,
     localities: "France",
     Professionals: "Senior Sales Associate",
+    guest: true,
   },
   {
     id: 28,
@@ -288,6 +317,7 @@ export const data: dataType[] = [
     age: 25,
     localities: "Russia",
     Professionals: "Occupational Therapist",
+    guest: true,
   },
   {
     id: 29,
@@ -298,6 +328,7 @@ export const data: dataType[] = [
     age: 35,
     localities: "Portugal",
     Professionals: "Nurse",
+    guest: true,
   },
   {
     id: 30,
@@ -308,6 +339,7 @@ export const data: dataType[] = [
     age: 26,
     localities: "Sweden",
     Professionals: "Geological Engineer",
+    guest: true,
   },
   {
     id: 31,
@@ -318,6 +350,7 @@ export const data: dataType[] = [
     age: 8,
     localities: "Indonesia",
     Professionals: "Budget/Accounting Analyst I",
+    guest: true,
   },
   {
     id: 32,
@@ -328,6 +361,7 @@ export const data: dataType[] = [
     age: 2,
     localities: "Brazil",
     Professionals: "Accounting Assistant IV",
+    guest: true,
   },
   {
     id: 33,
@@ -338,6 +372,7 @@ export const data: dataType[] = [
     age: 15,
     localities: "Indonesia",
     Professionals: "Accounting Assistant II",
+    guest: true,
   },
   {
     id: 34,
@@ -348,6 +383,7 @@ export const data: dataType[] = [
     age: 27,
     localities: "Indonesia",
     Professionals: "Financial Advisor",
+    guest: true,
   },
   {
     id: 35,
@@ -358,6 +394,7 @@ export const data: dataType[] = [
     age: 38,
     localities: "China",
     Professionals: "Web Designer IV",
+    guest: true,
   },
   {
     id: 36,
@@ -368,6 +405,7 @@ export const data: dataType[] = [
     age: 25,
     localities: "Sweden",
     Professionals: "Statistician I",
+    guest: true,
   },
   {
     id: 37,
@@ -378,6 +416,7 @@ export const data: dataType[] = [
     age: 32,
     localities: "China",
     Professionals: "Health Coach III",
+    guest: true,
   },
   {
     id: 38,
@@ -388,6 +427,7 @@ export const data: dataType[] = [
     age: 8,
     localities: "Greece",
     Professionals: "Office Assistant III",
+    guest: true,
   },
   {
     id: 39,
@@ -398,6 +438,7 @@ export const data: dataType[] = [
     age: 12,
     localities: "Republic of the Congo",
     Professionals: "Staff Accountant III",
+    guest: true,
   },
   {
     id: 40,
@@ -408,6 +449,7 @@ export const data: dataType[] = [
     age: 14,
     localities: "Indonesia",
     Professionals: "Payment Adjustment Coordinator",
+    guest: true,
   },
   {
     id: 41,
@@ -418,6 +460,7 @@ export const data: dataType[] = [
     age: 39,
     localities: "Albania",
     Professionals: "Product Engineer",
+    guest: false,
   },
   {
     id: 42,
@@ -428,6 +471,7 @@ export const data: dataType[] = [
     age: 1,
     localities: "Mexico",
     Professionals: "Internal Auditor",
+    guest: false,
   },
   {
     id: 43,
@@ -438,6 +482,7 @@ export const data: dataType[] = [
     age: 15,
     localities: "Colombia",
     Professionals: "Editor",
+    guest: false,
   },
   {
     id: 44,
@@ -448,6 +493,7 @@ export const data: dataType[] = [
     age: 22,
     localities: "Poland",
     Professionals: "Media Manager I",
+    guest: false,
   },
   {
     id: 45,
@@ -458,6 +504,7 @@ export const data: dataType[] = [
     age: 28,
     localities: "Nigeria",
     Professionals: "Paralegal",
+    guest: false,
   },
   {
     id: 46,
@@ -468,6 +515,7 @@ export const data: dataType[] = [
     age: 12,
     localities: "China",
     Professionals: "Product Engineer",
+    guest: false,
   },
   {
     id: 47,
@@ -478,6 +526,7 @@ export const data: dataType[] = [
     age: 12,
     localities: "Indonesia",
     Professionals: "Nurse",
+    guest: false,
   },
   {
     id: 48,
@@ -488,6 +537,7 @@ export const data: dataType[] = [
     age: 18,
     localities: "Indonesia",
     Professionals: "Dental Hygienist",
+    guest: false,
   },
   {
     id: 49,
@@ -498,6 +548,7 @@ export const data: dataType[] = [
     age: 26,
     localities: "China",
     Professionals: "Executive Secretary",
+    guest: false,
   },
   {
     id: 50,
@@ -508,6 +559,7 @@ export const data: dataType[] = [
     age: 9,
     localities: "Mexico",
     Professionals: "Speech Pathologist",
+    guest: false,
   },
   {
     id: 51,
@@ -518,6 +570,7 @@ export const data: dataType[] = [
     age: 11,
     localities: "Thailand",
     Professionals: "Quality Control Specialist",
+    guest: false,
   },
   {
     id: 52,
@@ -528,6 +581,7 @@ export const data: dataType[] = [
     age: 3,
     localities: "Portugal",
     Professionals: "Associate Professor",
+    guest: false,
   },
   {
     id: 53,
@@ -538,6 +592,7 @@ export const data: dataType[] = [
     age: 2,
     localities: "China",
     Professionals: "Research Associate",
+    guest: false,
   },
   {
     id: 54,
@@ -548,6 +603,7 @@ export const data: dataType[] = [
     age: 19,
     localities: "Portugal",
     Professionals: "Executive Secretary",
+    guest: false,
   },
   {
     id: 55,
@@ -558,6 +614,7 @@ export const data: dataType[] = [
     age: 12,
     localities: "Philippines",
     Professionals: "Help Desk Technician",
+    guest: false,
   },
   {
     id: 56,
@@ -568,6 +625,7 @@ export const data: dataType[] = [
     age: 33,
     localities: "Indonesia",
     Professionals: "Programmer Analyst III",
+    guest: false,
   },
   {
     id: 57,
@@ -578,6 +636,7 @@ export const data: dataType[] = [
     age: 32,
     localities: "China",
     Professionals: "Internal Auditor",
+    guest: false,
   },
   {
     id: 58,
@@ -588,6 +647,7 @@ export const data: dataType[] = [
     age: 32,
     localities: "South Africa",
     Professionals: "VP Accounting",
+    guest: false,
   },
   {
     id: 59,
@@ -598,6 +658,7 @@ export const data: dataType[] = [
     age: 16,
     localities: "China",
     Professionals: "Civil Engineer",
+    guest: false,
   },
   {
     id: 60,
@@ -608,6 +669,7 @@ export const data: dataType[] = [
     age: 1,
     localities: "Brazil",
     Professionals: "Speech Pathologist",
+    guest: false,
   },
   {
     id: 61,
@@ -618,6 +680,7 @@ export const data: dataType[] = [
     age: 26,
     localities: "China",
     Professionals: "Geologist III",
+    guest: false,
   },
   {
     id: 62,
@@ -628,6 +691,7 @@ export const data: dataType[] = [
     age: 37,
     localities: "Tunisia",
     Professionals: "Director of Sales",
+    guest: false,
   },
   {
     id: 63,
@@ -638,6 +702,7 @@ export const data: dataType[] = [
     age: 27,
     localities: "South Africa",
     Professionals: "Nurse",
+    guest: false,
   },
   {
     id: 64,
@@ -648,6 +713,7 @@ export const data: dataType[] = [
     age: 12,
     localities: "Laos",
     Professionals: "Help Desk Operator",
+    guest: false,
   },
   {
     id: 65,
@@ -658,6 +724,7 @@ export const data: dataType[] = [
     age: 14,
     localities: "Indonesia",
     Professionals: "Structural Analysis Engineer",
+    guest: false,
   },
   {
     id: 66,
@@ -668,6 +735,7 @@ export const data: dataType[] = [
     age: 6,
     localities: "Philippines",
     Professionals: "Help Desk Operator",
+    guest: false,
   },
   {
     id: 67,
@@ -678,6 +746,7 @@ export const data: dataType[] = [
     age: 25,
     localities: "United States",
     Professionals: "Geologist I",
+    guest: false,
   },
   {
     id: 68,
@@ -688,6 +757,7 @@ export const data: dataType[] = [
     age: 33,
     localities: "China",
     Professionals: "Accountant IV",
+    guest: false,
   },
   {
     id: 69,
@@ -698,6 +768,7 @@ export const data: dataType[] = [
     age: 5,
     localities: "Brazil",
     Professionals: "Actuary",
+    guest: false,
   },
   {
     id: 70,
@@ -708,6 +779,7 @@ export const data: dataType[] = [
     age: 2,
     localities: "Poland",
     Professionals: "Legal Assistant",
+    guest: false,
   },
   {
     id: 71,
@@ -718,6 +790,7 @@ export const data: dataType[] = [
     age: 12,
     localities: "United States",
     Professionals: "Web Developer II",
+    guest: false,
   },
   {
     id: 72,
@@ -728,6 +801,7 @@ export const data: dataType[] = [
     age: 31,
     localities: "Philippines",
     Professionals: "Geological Engineer",
+    guest: false,
   },
   {
     id: 73,
@@ -738,6 +812,7 @@ export const data: dataType[] = [
     age: 6,
     localities: "Ukraine",
     Professionals: "Research Assistant I",
+    guest: false,
   },
   {
     id: 74,
@@ -748,6 +823,7 @@ export const data: dataType[] = [
     age: 25,
     localities: "Thailand",
     Professionals: "Paralegal",
+    guest: false,
   },
   {
     id: 75,
@@ -758,6 +834,7 @@ export const data: dataType[] = [
     age: 19,
     localities: "Sweden",
     Professionals: "Environmental Specialist",
+    guest: false,
   },
   {
     id: 76,
@@ -768,6 +845,7 @@ export const data: dataType[] = [
     age: 37,
     localities: "Belarus",
     Professionals: "Media Manager I",
+    guest: false,
   },
   {
     id: 77,
@@ -778,6 +856,7 @@ export const data: dataType[] = [
     age: 40,
     localities: "France",
     Professionals: "Speech Pathologist",
+    guest: false,
   },
   {
     id: 78,
@@ -788,6 +867,7 @@ export const data: dataType[] = [
     age: 25,
     localities: "Portugal",
     Professionals: "General Manager",
+    guest: false,
   },
   {
     id: 79,
@@ -798,6 +878,7 @@ export const data: dataType[] = [
     age: 15,
     localities: "Honduras",
     Professionals: "Librarian",
+    guest: false,
   },
   {
     id: 80,
@@ -808,6 +889,7 @@ export const data: dataType[] = [
     age: 27,
     localities: "Japan",
     Professionals: "Sales Representative",
+    guest: false,
   },
   {
     id: 81,
@@ -818,6 +900,7 @@ export const data: dataType[] = [
     age: 4,
     localities: "Thailand",
     Professionals: "Administrative Officer",
+    guest: false,
   },
   {
     id: 82,
@@ -828,6 +911,7 @@ export const data: dataType[] = [
     age: 20,
     localities: "Bolivia",
     Professionals: "Human Resources Manager",
+    guest: false,
   },
   {
     id: 83,
@@ -838,6 +922,7 @@ export const data: dataType[] = [
     age: 7,
     localities: "Iran",
     Professionals: "Professor",
+    guest: false,
   },
   {
     id: 84,
@@ -848,6 +933,7 @@ export const data: dataType[] = [
     age: 22,
     localities: "Russia",
     Professionals: "Recruiter",
+    guest: false,
   },
   {
     id: 85,
@@ -858,6 +944,7 @@ export const data: dataType[] = [
     age: 40,
     localities: "Poland",
     Professionals: "Staff Accountant III",
+    guest: false,
   },
   {
     id: 86,
@@ -868,6 +955,7 @@ export const data: dataType[] = [
     age: 21,
     localities: "Argentina",
     Professionals: "Software Test Engineer IV",
+    guest: false,
   },
   {
     id: 87,
@@ -878,6 +966,7 @@ export const data: dataType[] = [
     age: 34,
     localities: "Palestinian Territory",
     Professionals: "VP Marketing",
+    guest: false,
   },
   {
     id: 88,
@@ -888,6 +977,7 @@ export const data: dataType[] = [
     age: 1,
     localities: "Uganda",
     Professionals: "Product Engineer",
+    guest: false,
   },
   {
     id: 89,
@@ -898,6 +988,7 @@ export const data: dataType[] = [
     age: 24,
     localities: "Mexico",
     Professionals: "Assistant Manager",
+    guest: false,
   },
   {
     id: 90,
@@ -908,6 +999,7 @@ export const data: dataType[] = [
     age: 18,
     localities: "Burkina Faso",
     Professionals: "Project Manager",
+    guest: false,
   },
   {
     id: 91,
@@ -918,6 +1010,7 @@ export const data: dataType[] = [
     age: 19,
     localities: "Belarus",
     Professionals: "Assistant Professor",
+    guest: false,
   },
   {
     id: 92,
@@ -928,6 +1021,7 @@ export const data: dataType[] = [
     age: 16,
     localities: "Argentina",
     Professionals: "Design Engineer",
+    guest: false,
   },
   {
     id: 93,
@@ -938,6 +1032,7 @@ export const data: dataType[] = [
     age: 28,
     localities: "Indonesia",
     Professionals: "Programmer II",
+    guest: false,
   },
   {
     id: 94,
@@ -948,6 +1043,7 @@ export const data: dataType[] = [
     age: 6,
     localities: "Tunisia",
     Professionals: "Human Resources Manager",
+    guest: false,
   },
   {
     id: 95,
@@ -958,6 +1054,7 @@ export const data: dataType[] = [
     age: 38,
     localities: "Sweden",
     Professionals: "Human Resources Manager",
+    guest: false,
   },
   {
     id: 96,
@@ -968,6 +1065,7 @@ export const data: dataType[] = [
     age: 40,
     localities: "Mali",
     Professionals: "VP Accounting",
+    guest: false,
   },
   {
     id: 97,
@@ -978,6 +1076,7 @@ export const data: dataType[] = [
     age: 6,
     localities: "Serbia",
     Professionals: "Editor",
+    guest: false,
   },
   {
     id: 98,
@@ -988,6 +1087,7 @@ export const data: dataType[] = [
     age: 25,
     localities: "Maldives",
     Professionals: "Database Administrator II",
+    guest: false,
   },
   {
     id: 99,
@@ -998,6 +1098,7 @@ export const data: dataType[] = [
     age: 32,
     localities: "Philippines",
     Professionals: "Executive Secretary",
+    guest: false,
   },
   {
     id: 100,
@@ -1008,5 +1109,6 @@ export const data: dataType[] = [
     age: 15,
     localities: "France",
     Professionals: "Chief Design Engineer",
+    guest: false,
   },
 ];

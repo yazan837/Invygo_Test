@@ -30,7 +30,7 @@ const Registration = ({}) => {
   const [professionValue, setProfessionValue] = useState<number>(0);
   const [isDatePickerVisible, setDatePickerVisibility] =
     useState<boolean>(false);
-  const [dateString, setDateString] = useState<string>("Enter DOB");
+  const [dateString, setDateString] = useState<string>("Date of birth");
   const [name, setName] = useState<string>("");
   const [age, setAge] = useState<string>("");
   const [locality, setLocality] = useState<string>("");
