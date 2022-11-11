@@ -13,12 +13,6 @@ import CalendarPicker from "react-native-calendar-picker";
 
 import FlashMessage, { showMessage } from "react-native-flash-message";
 
-import RadioForm, {
-  RadioButton,
-  RadioButtonInput,
-  RadioButtonLabel,
-} from "react-native-simple-radio-button";
-
 const { height, width } = Dimensions.get("window");
 
 const guestCountRadio = [
@@ -32,8 +26,8 @@ const professionRadio = [
 ];
 
 const Registration = ({}) => {
-  const [guestCountValue, setguestCountValue] = useState<number>(0);
-  const [professionValue, setprofessionValue] = useState<number>(0);
+  const [guestCountValue, setGuestCountValue] = useState<number>(0);
+  const [professionValue, setProfessionValue] = useState<number>(0);
   const [isDatePickerVisible, setDatePickerVisibility] =
     useState<boolean>(false);
   const [dateString, setDateString] = useState<string>("Enter DOB");
@@ -81,8 +75,8 @@ const Registration = ({}) => {
     setAge("");
     setAddress("");
     setLocality("");
-    setguestCountValue(0);
-    setprofessionValue(0);
+    setGuestCountValue(0);
+    setProfessionValue(0);
     setDateString("Enter DOB");
   };
 
@@ -111,7 +105,7 @@ const Registration = ({}) => {
               value={age}
             />
           </View>
-          <View style={styles.viewDataContainer}>
+          <View style={[styles.viewDataContainer, { zIndex: 1 }]}>
             <TouchableOpacity
               onPress={showDatePicker}
               style={{
@@ -142,38 +136,6 @@ const Registration = ({}) => {
               )}
             </TouchableOpacity>
           </View>
-          <View>
-            <View style={styles.radioViewContainer}>
-              <Text>Profession</Text>
-              <RadioForm formHorizontal={true} animation={true}>
-                {professionRadio.map((obj, i) => (
-                  <RadioButton labelHorizontal={true} key={i}>
-                    <RadioButtonInput
-                      obj={obj}
-                      index={i}
-                      isSelected={professionValue === i}
-                      onPress={setprofessionValue}
-                      buttonInnerColor={"black"}
-                      buttonOuterColor={"black"}
-                      buttonSize={20}
-                      buttonOuterSize={30}
-                      buttonWrapStyle={{ marginLeft: 12 }}
-                    />
-                    <RadioButtonLabel
-                      obj={obj}
-                      index={i}
-                      labelHorizontal={true}
-                      onPress={setprofessionValue}
-                      labelStyle={{
-                        fontSize: 17,
-                        color: "black",
-                      }}
-                    />
-                  </RadioButton>
-                ))}
-              </RadioForm>
-            </View>
-          </View>
           <View style={styles.viewDataContainer}>
             <TextInput
               placeholder="Locality"
@@ -184,34 +146,50 @@ const Registration = ({}) => {
               value={locality}
             />
           </View>
+          <View>
+            <View style={styles.radioViewContainer}>
+              <Text>Profession</Text>
+              {professionRadio.map((obj, i) => (
+                <View
+                  key={i}
+                  style={[styles.RadioButtonContainer, { width: "40%" }]}
+                >
+                  <TouchableOpacity
+                    onPress={() => setProfessionValue(obj.value)}
+                    style={[
+                      styles.RadioButton,
+                      {
+                        backgroundColor:
+                          professionValue == obj.value ? "black" : "white",
+                      },
+                    ]}
+                  />
+                  <Text>{obj.label}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
 
           <View style={styles.radioViewContainer}>
             <Text>Guest </Text>
-            <RadioForm formHorizontal={true} animation={true}>
-              {guestCountRadio.map((obj, i) => (
-                <RadioButton labelHorizontal={true} key={i}>
-                  <RadioButtonInput
-                    obj={obj}
-                    index={i}
-                    isSelected={guestCountValue === i}
-                    onPress={setguestCountValue}
-                    buttonInnerColor={"black"}
-                    buttonOuterColor={"black"}
-                    buttonWrapStyle={{ marginLeft: 12 }}
-                  />
-                  <RadioButtonLabel
-                    obj={obj}
-                    index={i}
-                    labelHorizontal={true}
-                    onPress={setguestCountValue}
-                    labelStyle={{
-                      fontSize: 17,
-                      color: "black",
-                    }}
-                  />
-                </RadioButton>
-              ))}
-            </RadioForm>
+            {guestCountRadio.map((obj, i) => (
+              <View
+                key={i}
+                style={[styles.RadioButtonContainer, { width: "25%" }]}
+              >
+                <TouchableOpacity
+                  onPress={() => setGuestCountValue(obj.value)}
+                  style={[
+                    styles.RadioButton,
+                    {
+                      backgroundColor:
+                        guestCountValue == obj.value ? "black" : "white",
+                    },
+                  ]}
+                />
+                <Text>{obj.label}</Text>
+              </View>
+            ))}
           </View>
           <View style={[styles.viewDataContainer, { height: 150 }]}>
             <TextInput
@@ -278,8 +256,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 50,
     alignItems: "center",
-    marginLeft: width * 0.02,
-    marginTop: 10,
+    justifyContent: "center",
+    marginTop: 30,
+  },
+  RadioButtonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+  RadioButton: {
+    height: 30,
+    width: 30,
+    borderRadius: 50,
+    borderWidth: 1,
   },
   buttonTouchable: {
     height: 55,

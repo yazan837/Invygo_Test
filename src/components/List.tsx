@@ -21,7 +21,7 @@ const List: any = (props: {
     <TouchableOpacity
       style={styles.item}
       onPress={() => {
-        navigation.navigate("Details Screen", { item });
+        navigation.navigate("Details", { item });
       }}
     >
       <Text style={styles.title}>First Name : {item.first_name}</Text>
