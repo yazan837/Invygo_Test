@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { render } from "@testing-library/react-native";
 import React from "react";
+import { create } from "react-test-renderer";
 import Search from "../src/screens/SearchList";
 
 describe("Testing Search Screen", () => {
@@ -12,5 +13,13 @@ describe("Testing Search Screen", () => {
     );
 
     render(component);
+  });
+  const tree = create(
+    <NavigationContainer>
+      <Search />
+    </NavigationContainer>
+  );
+  test("test Search page ui", () => {
+    expect(tree).toMatchSnapshot();
   });
 });
