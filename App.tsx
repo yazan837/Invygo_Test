@@ -1,5 +1,4 @@
 import React from "react";
-import { Text } from "react-native";
 
 import { Provider } from "react-redux";
 import RootNavigator from "./src/navigation/RootNavigator";

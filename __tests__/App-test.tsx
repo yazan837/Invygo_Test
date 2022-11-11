@@ -1,14 +1,18 @@
-/**
- * @format
- */
+import { render } from "@testing-library/react-native";
+import React from "react";
+import { Provider } from "react-redux";
+import RootNavigator from "../src/navigation/RootNavigator";
+import { store } from "../src/redux/store";
 
-import 'react-native';
-import React from 'react';
-import App from '../App';
+jest.useFakeTimers();
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-
-it('renders correctly', () => {
-  renderer.create(<App />);
+describe("Testing react navigation", () => {
+  test("Main Entry point for the application", async () => {
+    const component = (
+      <Provider store={store}>
+        <RootNavigator />
+      </Provider>
+    );
+    render(component);
+  });
 });
