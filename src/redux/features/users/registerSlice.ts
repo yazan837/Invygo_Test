@@ -1,19 +1,16 @@
-import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
-import { login, register } from "./thunks";
+import { register } from "./thunks";
 // Define a type for the slice state
 interface RegisterSlice {
   registerError: string | undefined;
   registerMessage: string | undefined;
-  pending: boolean;
 }
 
 // Define the initial state using that type
 const initialState: RegisterSlice = {
   registerError: undefined,
   registerMessage: undefined,
-  pending: false,
 };
 
 export const registerSlice = createSlice({
@@ -24,24 +21,9 @@ export const registerSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {
-        if (action.payload["details"]) {
-          state.registerError = action.payload["details"];
-
-          state.pending = false;
-        }
-        if (action.payload["message"]) {
-          state.registerMessage =
-            action.payload["message"] + "for confirmation";
-          state.registerError = undefined;
-          state.pending = false;
-        }
+        state.registerMessage = action.payload;
       })
-      .addCase(login.pending, (state, action) => {
-        state.pending = true;
-      })
-      .addCase(login.rejected, (state, action) => {
-        state.pending = false;
-
+      .addCase(register.rejected, (state, action) => {
         state.registerError = action.error.message;
       });
   },

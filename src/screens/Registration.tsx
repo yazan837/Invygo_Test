@@ -1,4 +1,6 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useCallback, useState } from "react";
+import { useEffect } from "react";
 import {
   Dimensions,
   Platform,
@@ -13,6 +15,9 @@ import CalendarPicker from "react-native-calendar-picker";
 
 import FlashMessage, { showMessage } from "react-native-flash-message";
 
+import { register } from "../redux/features/users/thunks";
+import { useAppDispatch } from "../redux/store";
+
 const { height, width } = Dimensions.get("window");
 
 const guestCountRadio = [
@@ -26,6 +31,12 @@ const professionRadio = [
 ];
 
 const Registration = ({}) => {
+  type Nav = {
+    navigate: (value: string, {}) => void;
+  };
+  const dispatch = useAppDispatch();
+  const navigation = useNavigation<Nav>();
+
   const [guestCountValue, setGuestCountValue] = useState<number>(0);
   const [professionValue, setProfessionValue] = useState<number>(0);
   const [isDatePickerVisible, setDatePickerVisibility] =
@@ -40,15 +51,16 @@ const Registration = ({}) => {
     setDatePickerVisibility(true);
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     showMessage({
       message: "Processing...",
       type: "info",
       autoHide: true,
       duration: 50000,
-      backgroundColor: "black", // background color
-      color: "red", // text color
+      backgroundColor: "black",
+      color: "black",
     });
+
     let obj = {
       name: name,
       age: age,
@@ -59,15 +71,22 @@ const Registration = ({}) => {
       Address: address,
     };
     console.log("obj ", obj);
+    const res = await dispatch(register());
+
+    if (res.meta.requestStatus == "fulfilled") {
+      navigation.navigate("SearchStack", {});
+    }
+    if (res.meta.requestStatus == "rejected") {
+      showMessage({
+        message: "something went wrong , please try again",
+        type: "info",
+        autoHide: true,
+        duration: 500,
+        backgroundColor: "black",
+        color: "white",
+      });
+    }
     clearData();
-    showMessage({
-      message: "Submit Successfully...",
-      type: "info",
-      autoHide: true,
-      duration: 500,
-      backgroundColor: "black", // background color
-      color: "white", // text color
-    });
   };
 
   const clearData = () => {
