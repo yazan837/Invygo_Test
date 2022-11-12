@@ -74,7 +74,7 @@ const Registration = ({}) => {
     const res = await dispatch(register());
 
     if (res.meta.requestStatus == "fulfilled") {
-      navigation.navigate("SearchStack", {});
+      navigation.navigate("Search", {});
     }
     if (res.meta.requestStatus == "rejected") {
       showMessage({
@@ -167,7 +167,7 @@ const Registration = ({}) => {
           </View>
           <View>
             <View style={styles.radioViewContainer}>
-              <Text>Profession</Text>
+              <Text>Profession : </Text>
               {professionRadio.map((obj, i) => (
                 <View
                   key={i}
@@ -190,7 +190,7 @@ const Registration = ({}) => {
           </View>
 
           <View style={styles.radioViewContainer}>
-            <Text>Guest </Text>
+            <Text>Guest Number</Text>
             {guestCountRadio.map((obj, i) => (
               <View
                 key={i}
@@ -258,6 +258,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 12,
+    borderColor: "grey",
   },
   textDataContainer: {
     fontSize: 16,
@@ -281,13 +282,14 @@ const styles = StyleSheet.create({
   RadioButtonContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "center",
   },
   RadioButton: {
     height: 30,
     width: 30,
     borderRadius: 50,
     borderWidth: 1,
+    margin: 10,
   },
   buttonTouchable: {
     height: 55,

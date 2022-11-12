@@ -9,7 +9,7 @@ import Details from "../screens/Details";
 
 type NavigationType = {
   Registration: { name: string };
-  Search: undefined;
+  Search: { name: string };
   Report: undefined;
   Details: { name: string };
   SearchStack: undefined;
@@ -21,7 +21,7 @@ export default function RootNavigation() {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Registration" component={Registration} />
-        <Drawer.Screen name="SearchStack" component={SearchStack} />
+        <Drawer.Screen name="Search" component={SearchStack} />
         <Drawer.Screen name="Report" component={Report} />
       </Drawer.Navigator>
     </NavigationContainer>
