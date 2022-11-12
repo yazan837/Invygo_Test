@@ -29,8 +29,10 @@ const professionRadio = [
   { label: "Employed", value: 0 },
   { label: "Student ", value: 1 },
 ];
-
-const Registration = ({}) => {
+interface Props {
+  onSubmitTest?: () => void;
+}
+const Registration = ({ onSubmitTest }: Props) => {
   type Nav = {
     navigate: (value: string, {}) => void;
   };
@@ -96,7 +98,7 @@ const Registration = ({}) => {
     setLocality("");
     setGuestCountValue(0);
     setProfessionValue(0);
-    setDateString("Enter DOB");
+    setDateString("Date of birth");
   };
 
   return (
@@ -232,7 +234,11 @@ const Registration = ({}) => {
 
           <View style={styles.buttonViewContainer}>
             <TouchableOpacity
-              onPress={() => onSubmit()}
+              testID="submit-test"
+              onPress={() => {
+                onSubmit();
+                onSubmitTest && onSubmitTest();
+              }}
               style={styles.buttonTouchable}
             >
               <Text style={{ fontSize: 17 }}>Publish</Text>

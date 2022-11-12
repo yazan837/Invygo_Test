@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { render } from "@testing-library/react-native";
+import { render, screen } from "@testing-library/react-native";
 import React from "react";
 import { create } from "react-test-renderer";
 import Search from "../src/screens/SearchList";
@@ -13,6 +13,8 @@ describe("Testing Search Screen", () => {
     );
 
     render(component);
+    const DataList = screen.getAllByText(/First Name :/);
+    expect(DataList.length).toBe(10);
   });
   const tree = create(
     <NavigationContainer>
